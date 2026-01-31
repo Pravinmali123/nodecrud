@@ -1,0 +1,28 @@
+<h1><%= st %></h1>
+
+
+<form action="/getData">
+    Name:  <input type="text" name="name"> <br><br>
+    Surname:  <input type="text" name="surname">   <br><br>
+    <input type="submit">
+</form>
+
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>delete</th>
+    </tr>
+<tbody>
+
+<% list.map((item, index) => { %>
+    <tr>
+        <td><%= item.name %></td>
+        <td><%= item.surname %></td>
+        <td><button><a href="/deletedata/<%= index %>">delete</a></button></td>
+    </tr>
+<% }) %>
+
+</tbody>
+</table>
